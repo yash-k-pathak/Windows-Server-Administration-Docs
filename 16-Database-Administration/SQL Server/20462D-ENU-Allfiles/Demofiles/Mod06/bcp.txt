@@ -1,0 +1,6 @@
+bcp -?
+
+bcp AdventureWorks.Sales.SalesTaxRate format nul -S MIA-SQL -T -c  -t , -r \n -x -f D:\Demofiles\Mod06\TaxRateFmt.xml
+
+bcp AdventureWorks.Sales.SalesTaxRate out D:\Demofiles\Mod06\SalesTaxRate.csv -S MIA-SQL -T -f D:\Demofiles\Mod06\TaxRateFmt.xml
+

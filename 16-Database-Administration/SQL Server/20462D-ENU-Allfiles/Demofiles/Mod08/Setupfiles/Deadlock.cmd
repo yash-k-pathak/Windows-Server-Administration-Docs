@@ -1,0 +1,2 @@
+START sqlcmd -E -d AdventureWorks -Q"BEGIN TRAN UPDATE Production.Product SET ListPrice = ListPrice * 0.9  WHERE ProductSubCategoryID = 2; WAITFOR DELAY '00:00:07'; UPDATE Sales.SpecialOffer 	SET Description = 'Bike Sale' WHERE SpecialOfferID = 16; ROLLBACK TRAN;"
+START sqlcmd -E -d AdventureWorks -Q"BEGIN TRAN UPDATE Sales.SpecialOffer SET Description = 'Bike Sale' WHERE SpecialOfferID = 16; WAITFOR DELAY '00:00:05'; UPDATE Production.Product SET ListPrice = ListPrice * 0.9  WHERE ProductSubCategoryID = 2; ROLLBACK TRAN;"

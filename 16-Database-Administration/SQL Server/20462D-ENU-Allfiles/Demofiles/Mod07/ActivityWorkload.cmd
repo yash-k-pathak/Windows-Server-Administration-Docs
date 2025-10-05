@@ -1,0 +1,3 @@
+@ECHO OFF
+ECHO Running database workload...
+SQLCMD -E -d AdventureWorks -q "BEGIN TRAN; UPDATE Production.Product SET ListPrice = ListPrice * 1.1;" > NUL
